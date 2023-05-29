@@ -1,0 +1,40 @@
+Quando si applica l'annotazione @Builder a una classe,
+Lombok genera automaticamente un builder per quella classe.
+Il builder è una classe ausiliaria che fornisce metodi per impostare
+i valori dei campi della classe principale in modo fluido.
+In questo modo, puoi creare un'istanza della classe principale passo dopo passo,
+specificando solo i valori che ti interessano.
+
+Ad esempio, supponiamo di avere una classe Person con diversi campi come
+name, age, email, ecc. Applicando l'annotazione @Builder alla classe Person,
+Lombok genera automaticamente un builder per la classe Person.
+Puoi quindi utilizzare il builder per creare un'istanza di Person in modo più comodo.
+
+Ecco un esempio di come puoi utilizzare il builder generato da Lombok:
+
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
+@Builder
+public class Person {
+    private String name;
+    private int age;
+    private String email;
+}
+
+Utilizzo del builder generato
+Person person = Person.builder()
+                    .name("John")
+                    .age(25)
+                    .build();
+
+In questo esempio, stiamo creando un'istanza di Person utilizzando il builder
+generato da Lombok. Chiamando i metodi come name("John") e age(25) sul builder,
+stiamo impostando i valori dei campi desiderati.
+Infine, chiamando build(), otteniamo l'istanza completa di Person.
+
+In sintesi, l'annotazione @Builder di Lombok semplifica la creazione di oggetti complessi,
+generando automaticamente un builder che fornisce un'interfaccia intuitiva
+per impostare i valori dei campi durante la creazione dell'oggetto.
+Questo riduce la verbosità del codice e migliora la leggibilità.

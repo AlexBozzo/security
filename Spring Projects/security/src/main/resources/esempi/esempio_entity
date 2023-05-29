@@ -1,0 +1,35 @@
+L'annotazione @Entity in Spring viene utilizzata per indicare
+che una classe rappresenta un'entità persistente nel contesto di un'applicazione Spring basata su database.
+In altre parole, l'annotazione @Entity viene utilizzata per definire una classe che mappa una tabella del database.
+
+Quando si applica l'annotazione @Entity a una classe, si sta indicando che quella classe
+rappresenta una tabella nel database.
+La classe deve avere una corrispondente struttura di dati nel database,
+dove ogni campo della classe rappresenta una colonna della tabella.
+L'annotazione @Entity fornisce informazioni importanti al framework di persistenza di
+Spring (come ad esempio Hibernate) per mappare l'oggetto alla tabella del database.
+
+Ecco un esempio di come puoi utilizzare l'annotazione @Entity in Spring:
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Person {
+    @Id
+    private Long id;
+    private String name;
+    private int age;
+    // altri campi e metodi
+}
+
+In questo esempio, stiamo definendo una classe Person che rappresenta un'entità persistente nel contesto di un'applicazione Spring.
+Applichiamo l'annotazione @Entity alla classe Person per indicare che deve essere mappata a una tabella del database.
+L'annotazione @Id viene utilizzata per specificare che il campo id della classe corrisponde alla chiave primaria della tabella.
+
+L'annotazione @Entity permette al framework di persistenza di Spring di gestire l'interazione con il database,
+inclusa la creazione della tabella corrispondente, l'inserimento, l'aggiornamento e la lettura dei dati.
+
+In sintesi, l'annotazione @Entity in Spring viene utilizzata per definire una classe come un'entità persistente,
+indicando che rappresenta una tabella del database.
+Questo consente al framework di persistenza di Spring di gestire l'interazione con il database in modo semplice e intuitivo.

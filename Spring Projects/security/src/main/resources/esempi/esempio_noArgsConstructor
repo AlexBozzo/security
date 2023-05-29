@@ -1,0 +1,28 @@
+Quando si applica l'annotazione @NoArgsConstructor a una classe,
+Lombok genera automaticamente un costruttore senza argomenti per quella classe.
+Ciò significa che non è necessario scrivere manualmente il codice per creare il costruttore.
+
+Ecco un esempio di come puoi utilizzare l'annotazione @NoArgsConstructor di Lombok:
+
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+public class MyClass {
+    // campi e metodi della classe
+}
+
+In questo esempio, stiamo applicando l'annotazione @NoArgsConstructor alla classe MyClass.
+Dopo aver applicato questa annotazione, Lombok genera automaticamente un costruttore senza argomenti per la classe MyClass.
+Puoi quindi utilizzare il costruttore senza argomenti per creare un'istanza della classe senza dover specificare alcun valore.
+
+Ecco un esempio di come creare un'istanza di MyClass utilizzando il costruttore senza argomenti generato da Lombok:
+
+MyClass obj = new MyClass();
+
+In questo caso, stiamo creando un'istanza di MyClass utilizzando il costruttore senza argomenti generato da Lombok.
+Non è necessario specificare alcun valore all'interno delle parentesi tonde perché il costruttore
+senza argomenti non richiede alcun parametro.
+
+In sintesi, l'annotazione @NoArgsConstructor di Lombok semplifica la creazione di un costruttore senza argomenti,
+generando automaticamente il codice necessario per creare un'istanza di una classe senza dover specificare alcun valore.
+Questo riduce la verbosità del codice e semplifica la creazione di oggetti.

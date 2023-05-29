@@ -1,0 +1,37 @@
+L'annotazione @RequiredArgsConstructor di Lombok viene utilizzata per generare automaticamente
+un costruttore che accetta tutti i campi finali o marcati come @NonNull come argomenti.
+In altre parole, crea un costruttore che inizializza solo i campi finali o @NonNull.
+
+Quando si applica l'annotazione @RequiredArgsConstructor a una classe,
+Lombok genera automaticamente un costruttore che richiede argomenti solo per i campi finali o marcati come @NonNull.
+Questo elimina la necessità di scrivere manualmente il codice per creare un costruttore che inizializza solo i campi desiderati.
+
+Ecco un esempio di come puoi utilizzare l'annotazione @RequiredArgsConstructor di Lombok:
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class Person {
+    private final String name;
+    private final int age;
+    private String email;
+}
+
+In questo esempio, stiamo applicando l'annotazione @RequiredArgsConstructor alla classe Person.
+Dopo aver applicato questa annotazione, Lombok genera automaticamente un costruttore che
+richiede argomenti solo per i campi finali o marcati come @NonNull.
+Il campo email, non essendo né finale né @NonNull, non viene incluso nel costruttore generato.
+
+Puoi quindi utilizzare il costruttore generato per creare un'istanza di Person passando
+solo i valori dei campi finali o marcati come @NonNull:
+
+Person person = new Person("John", 25);
+
+In questo caso, stiamo creando un'istanza di Person utilizzando il costruttore generato da Lombok.
+Passiamo i valori dei campi name e age come argomenti al costruttore per inizializzare l'istanza di Person.
+Il campo email può essere successivamente impostato utilizzando i metodi setter o accedendo direttamente al campo.
+
+In sintesi, l'annotazione @RequiredArgsConstructor di Lombok semplifica la creazione di un costruttore
+che accetta solo i campi finali o marcati come @NonNull, generando automaticamente il codice necessario
+per inizializzare solo i campi desiderati.
+Questo riduce la verbosità del codice e semplifica la creazione di oggetti con campi inizializzati in modo specifico.

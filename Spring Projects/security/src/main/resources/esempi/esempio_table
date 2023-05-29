@@ -1,0 +1,34 @@
+L'annotazione @Table in Spring viene utilizzata per specificare il nome
+di una tabella del database a cui è mappata una classe di entità.
+
+Quando si utilizza l'annotazione @Table, è possibile specificare il nome della t
+abella del database a cui la classe di entità è associata.
+Questo può essere utile quando il nome della tabella nel database non corrisponde esattamente al
+nome della classe o se si desidera utilizzare un nome specifico per la tabella.
+
+Ecco un esempio di come puoi utilizzare l'annotazione @Table in Spring:
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "persons")
+public class Person {
+    @Id
+    private Long id;
+    private String name;
+    private int age;
+    // altri campi e metodi
+}
+
+In questo esempio, stiamo definendo una classe Person come un'entità persistente utilizzando l'annotazione @Entity.
+Applichiamo anche l'annotazione @Table e specifichiamo name = "persons" per indicare che la classe Person
+è mappata alla tabella chiamata "persons" nel database.
+Questo consente al framework di persistenza di Spring di associare correttamente la classe Person alla tabella
+"persons" durante le operazioni di persistenza dei dati.
+
+In sintesi, l'annotazione @Table in Spring viene utilizzata per specificare il nome di una tabella del
+database a cui una classe di entità è associata.
+Ciò consente di personalizzare l'associazione tra la classe e la tabella quando il nome della tabella
+non corrisponde esattamente al nome della classe o se si desidera utilizzare un nome specifico per la tabella.
